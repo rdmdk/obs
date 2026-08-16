@@ -28,7 +28,7 @@
                     padding: 0.66em;
                 }
 
-                span:only-child) {
+                span:only-child {
                     width: 100%;
                 }
             }
@@ -60,7 +60,7 @@
             }).join(''));
         };
         if (window.location.search) get_data();
-        else {main.insertAdjacentHTML('beforeend', ('<section class="empty"><span>Data should be supplied in the following format: ?username-score!username-score!</span></section>')};
+        else {main.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: ?username-score!username-score!</span></section>')};
     </script>
 </body>
 
