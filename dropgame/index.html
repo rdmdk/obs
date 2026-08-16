@@ -13,15 +13,25 @@
     <meta property="og:description" content="" />
 
     <style>
-      *{font-size:1em;line-height:1;text-decoration:none;margin:0;padding:0;box-sizing:border-box;scrollbar-width:thin;touch-action:manipulation;}*::before,*::after{line-height:inherit;box-sizing:inherit}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
-      input{-webkit-appearance:none;-webkit-border-radius:0;}
-      iframe{width:100%;border:none;outline:none;}
+        *{font-size:1em;line-height:1;text-decoration:none;margin:0;padding:0;box-sizing:border-box;scrollbar-width:thin;touch-action:manipulation;}*::before,*::after{line-height:inherit;box-sizing:inherit}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
+        input{-webkit-appearance:none;-webkit-border-radius:0;}
+        iframe{width:100%;border:none;outline:none;}
     </style>
 </head>
 
 <body>
     <main></main>
     <script>
+        const main = document.querySelector('main');
+        const get_data = () => {
+            const data = window.location.search.substring(1).split('!').filter(Boolean);
+            for (let i = 0; i < data.length; i++) {
+                const text = /^(.*)-(.*?)!/.exec(data[i]);
+                console.log(text);
+                //main.insertAdjacentHTML('beforeend', `<section>${text}</section>`);
+            }
+        }
+        if (window.location.search) get_data();
     </script>
 </body>
 
