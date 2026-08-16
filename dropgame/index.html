@@ -28,6 +28,13 @@
                     line-height: inherit;
                     width: 50%;
                     padding: 0.5em 1em;
+
+                    em {
+                        font-style: normal;
+                        text-transform: courier, monospace;
+                        margin: 0.5em 0 0;
+                        display: block;
+                    }
                 }
 
                 span:only-child {
@@ -63,7 +70,7 @@
             }).join(''));
         };
         if (window.location.search) get_data();
-        else {main.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: ?username-score!username-score!</span></section>')};
+        else {main.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>')};
     </script>
 </body>
 
