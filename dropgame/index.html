@@ -45,7 +45,7 @@
     <script>
         const main = document.querySelector('main');
         const get_data = () => {
-            const data = window.location.search.substring(1).split('!').filter(Boolean);
+            const data = window.location.search.substring(1).split('!').filter(Boolean).sort((a, b) => parseFloat(b.split('-')[1]) - parseFloat(a.split('-')[1]));
             for (let i = 0; i < data.length; i++) {
                 const name_score = data[i].split('-');
                 main.insertAdjacentHTML('beforeend', `<section><span>${name_score[0]}</span><span>${name_score[1]}</span></section>`);
