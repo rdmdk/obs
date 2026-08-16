@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Drop Game Scoreboard</title>
+    <title>Drop Game Leaderboard</title>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,18 +18,28 @@
         iframe{width:100%;border:none;outline:none;}
 
         main {
-            font: 15vw arial, sans-serif;
-            display: table;
-            table-layout: fixed;
-            position: absolute;
-            inset: 0;
+            font: 3.33vw arial, sans-serif;
+
+            section {
+                display: flex;
+                
+                span {
+                    width: 50%;
+                    padding: 1em;
+                }
+            }
+
+            section:first-child {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
         }
     </style>
 </head>
 
 <body>
     <main>
-        <section>DROP GAME LEADERBOARD</section>
+        <section>Drop Game Leaderboard</section>
         <section><span>Name</span><span>Score</span></section>
     </main>
     <script>
