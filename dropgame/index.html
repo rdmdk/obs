@@ -27,10 +27,24 @@
           font-style: normal;
         }
 
+        html, body {
+            background: transparent;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+        }
 
         main {
             font: 3.33vw/1.33 arial, sans-serif;
+            letter-spacing: 0.25em;
             text-align: center;
+            background: #f8f8f8;
+            width: 75vw;
+            border-radius: 1em;
 
             section {
                 line-height: inherit;
@@ -66,7 +80,8 @@
                 text-transform: uppercase;
             }
 
-
+            section ~ section {border-top: 1px solid #808080}
+            
             section.empty:last-child {
                 opacity: 0.33;
             }
