@@ -46,11 +46,12 @@
             letter-spacing: 0.25em;
             text-align: center;
             text-transform: uppercase;
-            background: rgb(128 128 128 / 10%);
+            background: rgb(128 128 128 / 25%);
             backdrop-filter: blur(10px);
             color: white;
             width: 75vw;
             padding: 1.5rem;
+            border: 1px solid white;
 
             section {
                 line-height: inherit;
@@ -60,54 +61,59 @@
                 
                 span {
                     line-height: inherit;
-                    width: 50%;
 
                     em {
                         font-style: normal;
                         display: block;
                     }
                 }
-
-                span:only-child {
-                    text-align: center;
-                    width: 100%;
-                }
             }
 
-            section:first-child {padding: 0 0 0.75rem}
+            .x {
+                font-size: 1.25rem;
+                padding: 1rem 0 2rem;
+            }
 
-            section:first-child + section {
+            .y {
                 font-size: 0.5rem;
                 padding: 0 1.25rem;
             }
 
-            section:nth-child(2) ~ section {
+            div {
+                max-height: 50vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            div section {
                 background: rgb(255 255 255 / 15%);
                 margin: 1.5rem 0 0;
                 padding: 1.25rem;
             }   
 
-            section:not(.empty):nth-child(3) {background: rgb(255 255 255 / 30%)}
+            div section:not(.empty):first-child {background: rgb(255 255 255 / 30%)}
         }
     </style>
 </head>
 
 <body>
     <main class="comfortaa-abc123">
-        <section><span>Drop Game Leaderboard</span></section>
-        <section><span>Name</span><span>Score</span></section>
+        <section class="x"><span>Drop Game Leaderboard</span></section>
+        <section class="y"><span>Name</span><span>Score</span></section>
+        <div></div>
     </main>
     <script>
         const main = document.querySelector('main');
+        const div = main.querySelector('div');
         const get_data = () => {
             const data = window.location.search.substring(1).split('!').filter(Boolean).sort((a, b) => parseFloat(b.split('-')[1]) - parseFloat(a.split('-')[1]));
-            main.insertAdjacentHTML('beforeend', data.map(x => {
+            div.insertAdjacentHTML('beforeend', data.map(x => {
                 const [name, score] = x.split('-');
                 return `<section><span>${name}</span><span>${score}</span></section>`;
             }).join(''));
         };
         if (window.location.search) get_data();
-        else main.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
+        else div.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
     </script>
 </body>
 
