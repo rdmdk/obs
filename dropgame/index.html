@@ -90,7 +90,10 @@
                 display: flex;
                 align-items: end;
 
-                div {width: 100%}
+                div {
+                    width: 100%;
+                    transition: transform 4s ease-in-out;
+                }
 
                 section {
                     font-size: 2rem;
@@ -140,7 +143,7 @@
 
         setTimeout(() => {
             const y = aside.getBoundingClientRect().top - div.getBoundingClientRect().top;
-            div.style.transform = `translateY(-${y}px)`;
+            div.style.transform = `translateY(${y}px)`;
         }, 4e3);
 
         document.body.addEventListener('click', () => {
