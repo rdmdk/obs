@@ -120,6 +120,14 @@
         };
         if (window.location.search) get_data();
         else div.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
+
+        main.addEventListener('click', () => {
+            if (main.style.backgroundImage) return;
+            else {
+                main.style.backgroundImage = 'url(https://picsum.photos/1200/1200)';
+                main.style.backgroundSize = 'cover';
+            }
+        });
     </script>
 </body>
 
