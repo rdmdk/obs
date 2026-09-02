@@ -122,12 +122,9 @@
         const main = document.querySelector('main');
         const div = main.querySelector('div');
         const get_data = () => {
-            const data = [...new Map(window.location.search.substring(1).split('!').filter(Boolean).reduce((map, item) => {
-                const [name, score] = item.split('-');
-                const existing = map.get(name);
-                if (!existing || Number(score) > Number(existing.split('-')[1])) map.set(name, item);
-                return map;
-            }, new Map()).values())];
+            let data = window.location.search.substring(1).split('!').filter(Boolean).sort((a, b) => parseFloat(b.split('-')[1]) - parseFloat(a.split('-')[1]));
+            console.log(data);
+            data = [...new Map(data.map(a => [a.split('-')[0], a])).values()];
             div.insertAdjacentHTML('beforeend', data.map(x => {
                 const [name, score] = x.split('-');
                 return `<section><span>${name}</span><span>${score}</span></section>`;
