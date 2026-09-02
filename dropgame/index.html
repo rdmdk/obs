@@ -33,11 +33,12 @@
             height: 100%;
         }
 
-        html {font-size: 3vw}
+        html {font-size: 1.75vw}
 
         body {
             display: grid;
             place-content: center;
+            user-select: none;
         }
 
         main {
@@ -45,7 +46,7 @@
             letter-spacing: 0.25em;
             text-align: center;
             text-transform: uppercase;
-            background: rgb(255 255 255 / 10%);
+            background: rgb(128 128 128 / 10%);
             backdrop-filter: blur(10px);
             color: white;
             width: 75vw;
@@ -54,6 +55,8 @@
             section {
                 line-height: inherit;
                 display: flex;
+                justify-content: space-between;
+                gap: 1.5rem;
                 
                 span {
                     line-height: inherit;
@@ -71,21 +74,20 @@
                 }
             }
 
-            section:first-child {
-                color: inherit;
-            }
+            section:first-child {padding: 0 0 0.75rem}
 
             section:first-child + section {
                 font-size: 0.5rem;
-                color: #bbb;
-                padding: 1rem;
+                padding: 0 1.25rem;
             }
 
             section:nth-child(2) ~ section {
                 background: rgb(255 255 255 / 15%);
-                margin: 1rem 0 0;
+                margin: 1.5rem 0 0;
                 padding: 1.25rem;
-            }    
+            }   
+
+            section:not(.empty):nth-child(3) {background: rgb(255 255 255 / 30%)}
         }
     </style>
 </head>
