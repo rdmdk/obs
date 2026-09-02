@@ -133,7 +133,6 @@
                 const [name, score] = x.split('-');
                 return `<section><span>${name}</span><span>${score}</span></section>`;
             }).join(''));
-            main.removeAttribute('style');
         };
 
         if (window.location.search) get_data();
@@ -144,6 +143,7 @@
             div.style.transform = `translateY(${y}px)`;
         }, 4e3);
 
+        main.removeAttribute('style');
         setTimeout(() => main.style.opacity = 0, 10e3);
 
         document.body.addEventListener('click', () => {
