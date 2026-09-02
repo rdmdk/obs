@@ -124,7 +124,8 @@
     </main>
     <script>
         const main = document.querySelector('main');
-        const div = main.querySelector('div');
+        const aside = main.querySelector('aside');
+        const div = aside.querySelector('div');
         const get_data = () => {
             let data = window.location.search.substring(1).split('!').filter(Boolean);
             data = [...data.reduce((m,s)=>(k=s.slice(0,s.lastIndexOf('-')),n=parseFloat(s.slice(s.lastIndexOf('-')+1)),!m.has(k)||n>m.get(k).n?m.set(k,{v:s,n}):m),new Map()).values()].sort((a,b)=>b.n-a.n).map(o=>o.v);
@@ -137,8 +138,10 @@
         if (window.location.search) get_data();
         else div.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
 
-        div.scrollTo(0, 10000);
-        setTimeout(() => div.querySelector('section').scrollIntoView({ behavior: "smooth"}), 4e3);
+        setTimeout(() => {
+            const y = aside.getBoundingClientRect().top - div.getBoundingClientRect().top;
+            div.style.transform = `translateY(-${y}px)`;
+        }, 4e3);
 
         document.body.addEventListener('click', () => {
             if (document.body.style.backgroundImage) return;
