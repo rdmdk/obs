@@ -122,13 +122,18 @@
         const main = document.querySelector('main');
         const div = main.querySelector('div');
         const get_data = () => {
-            let data = window.location.search.substring(1).split('!').filter(Boolean).sort((a, b) => parseFloat(b.split('-')[1]) - parseFloat(a.split('-')[1]));
-            data = [...new Map(data.map(a => [a.split('-')[0], a])).values()];
+            const data = [...new Map(window.location.search.substring(1).split('!').filter(Boolean).reduce((map, item) => {
+                const [name, score] = item.split('-');
+                const existing = map.get(name);
+                if (!existing || Number(score) > Number(existing.split('-')[1])) map.set(name, item);
+                return map;
+            }, new Map()).values())];
             div.insertAdjacentHTML('beforeend', data.map(x => {
                 const [name, score] = x.split('-');
                 return `<section><span>${name}</span><span>${score}</span></section>`;
             }).join(''));
         };
+
         if (window.location.search) get_data();
         else div.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
 
