@@ -67,6 +67,10 @@
                         display: block;
                     }
                 }
+
+                span:only-child {
+                    width: 100%;
+                }
             }
 
             .x {
@@ -81,15 +85,17 @@
 
             div {
                 max-height: 50vh;
+                margin-top: 1.5rem;
                 overflow-x: hidden;
                 overflow-y: auto;
             }
 
             div section {
                 background: rgb(255 255 255 / 15%);
-                margin: 1.5rem 0 0;
                 padding: 1.25rem;
             }   
+
+            div section ~ section {margin-top: 1.5rem}
 
             div section:not(.empty):first-child {background: rgb(255 255 255 / 30%)}
         }
