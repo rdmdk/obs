@@ -104,12 +104,6 @@
                 section ~ section {margin-top: 1.5rem}
     
                 section:not(.empty):first-child {background: rgb(255 255 255 / 50%)}
-    
-                .empty {
-                    font-size: 1rem;
-    
-                    em {margin: 1rem 0 0}
-                } 
             }
         }
     </style>
@@ -125,8 +119,8 @@
         const main = document.querySelector('main');
         const aside = main.querySelector('aside');
         const div = aside.querySelector('div');
-        const get_data = () => {
-            let data = window.location.search.substring(1).split('!').filter(Boolean);
+        const get_data = (data) => {
+            data = (data.startsWith('?') ? data.substring(1) : data).split('!').filter(Boolean);
             data = [...data.reduce((m,s)=>(k=s.slice(0,s.lastIndexOf('-')),n=parseFloat(s.slice(s.lastIndexOf('-')+1)),!m.has(k)||n>m.get(k).n?m.set(k,{v:s,n}):m),new Map()).values()].sort((a,b)=>b.n-a.n).map(o=>o.v);
             div.insertAdjacentHTML('beforeend', data.map(x => {
                 const [name, score] = x.split('-');
@@ -134,8 +128,12 @@
             }).join(''));
         };
 
-        if (window.location.search) get_data();
-        else div.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
+        if (window.location.search) get_data(window.location.search);
+        else {
+            const data = '?' + Array.from({ length: 15 }, (_, i) => `user${i+1}-${(Math.random() * 99 + 1).toFixed(2)}`).join('!') + '!';
+            get_data(data);
+            main.classList.add('e');
+        }
 
         setTimeout(() => {
             const y = aside.getBoundingClientRect().top - div.getBoundingClientRect().top;
