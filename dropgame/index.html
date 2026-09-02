@@ -80,7 +80,7 @@
 
             .y {
                 font-size: 1rem;
-                padding: 0 1.75rem;
+                padding: 0 2rem;
             }
 
             div {
@@ -134,7 +134,7 @@
         if (window.location.search) get_data();
         else div.insertAdjacentHTML('beforeend', '<section class="empty"><span>Data should be supplied in the following format: <em>?username-score!username-score!</em></span></section>');
 
-        main.addEventListener('click', () => {
+        document.body.addEventListener('click', () => {
             if (document.body.style.backgroundImage) return;
             else {
                 document.body.style.backgroundImage = 'url(https://picsum.photos/1200/1200)';
