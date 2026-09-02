@@ -140,7 +140,7 @@
         setTimeout(() => {
             const y = aside.getBoundingClientRect().top - div.getBoundingClientRect().top;
             div.style.transform = `translateY(${y}px)`;
-        }, 6e3);
+        }, 2e3);
 
         setTimeout(() => main.removeAttribute('style'), 100);
         setTimeout(() => main.style.opacity = 0, 12e3);
