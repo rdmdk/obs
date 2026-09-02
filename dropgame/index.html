@@ -50,7 +50,6 @@
             color: white;
             max-width: 75vw;
             padding: 3rem;
-            border: 1px solid white;
             transition: opacity 2s ease-in-out;
 
             section {
@@ -145,14 +144,6 @@
 
         setTimeout(() => main.removeAttribute('style'), 100);
         setTimeout(() => main.style.opacity = 0, 12e3);
-
-        document.body.addEventListener('click', () => {
-            if (document.body.style.backgroundImage) return;
-            else {
-                document.body.style.backgroundImage = 'url(https://picsum.photos/1200/1200)';
-                document.body.style.backgroundSize = 'cover';
-            }
-        });
     </script>
 </body>
 
