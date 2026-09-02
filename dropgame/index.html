@@ -39,10 +39,9 @@
         }
 
         main {
-            font: 3.33vw/1.33 arial, sans-serif;
+            font: 3vw/1.33 arial, sans-serif;
             letter-spacing: 0.25em;
             text-align: center;
-            background: #fff;
             width: 75vw;
 
             section {
@@ -72,7 +71,7 @@
                 font-weight: 700;
                 text-shadow: 0 0 0.15em;
                 text-transform: uppercase;
-                background: gold;
+                background: linear-gradient(350deg, gold, orange);
                 color: white;
                 border-radius: 1em 1em 0 0;
                 box-shadow: 0 0 1em gold;
@@ -82,7 +81,11 @@
                 font-size: 0.5em;
                 font-weight: 700;
                 text-transform: uppercase;
+                background: white;
+                box-shadow: 0 0 1em white;
             }
+
+            section:last-child {border-radius: 0 0 1em 1em}
 
             section ~ section {border-top: 1px solid #ddd}
             
