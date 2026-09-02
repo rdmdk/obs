@@ -33,16 +33,23 @@
             height: 100%;
         }
 
+        html {font-size: 3vw}
+
         body {
             display: grid;
             place-content: center;
         }
 
         main {
-            font: 3vw/1 arial, sans-serif;
+            font: 1rem/1 arial, sans-serif;
             letter-spacing: 0.25em;
             text-align: center;
+            text-transform: uppercase;
+            background: rgb(255 255 255 / 10%);
+            backdrop-filter: blur(10px);
+            color: white;
             width: 75vw;
+            padding: 1.5rem;
 
             section {
                 line-height: inherit;
@@ -53,9 +60,7 @@
                     width: 50%;
 
                     em {
-                        font-family: courier, monospace;
                         font-style: normal;
-                        margin: 0.5em 0 0;
                         display: block;
                     }
                 }
@@ -67,37 +72,20 @@
             }
 
             section:first-child {
-                font-weight: 700;
-                text-shadow: 0 0 0.15em;
-                text-transform: uppercase;
-                background: linear-gradient(350deg, gold, orange);
-                color: white;
-                padding: 1.25em 1em;
-                border-radius: 1em 1em 0 0;
-                box-shadow: 0 0 1em gold;
+                color: inherit;
             }
 
             section:first-child + section {
-                font-size: 0.5em;
-                font-weight: 700;
-                line-height: 1;
-                text-transform: uppercase;
-                background: white;
+                font-size: 0.5rem;
                 color: #bbb;
-                padding: 1.5em;
-                box-shadow: 0 0 1em white;
+                padding: 1rem;
             }
 
             section:nth-child(2) ~ section {
-                padding: 1.25em;
-                border-top: 1px solid #eee;
-            }
-
-            section:not(.empty):nth-child(3) {color: #ff6500}
-
-            section:last-child {border-radius: 0 0 1em 1em}
-            
-            section.empty:last-child {color: #ddd}
+                background: rgb(255 255 255 / 15%);
+                margin: 1rem 0 0;
+                padding: 1.25rem;
+            }    
         }
     </style>
 </head>
