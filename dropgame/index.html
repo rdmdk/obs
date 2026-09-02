@@ -86,28 +86,31 @@
             aside {
                 max-height: calc(100vh - 38.75rem);
                 margin-top: 3rem;
-                overflow-x: hidden;
-                overflow-y: auto;
-            }
+                overflow: hidden;
+                display: flex;
+                align-items: end;
 
-            aside section {
-                font-size: 2rem;
-                background: rgb(255 255 255 / 15%);
-                padding: 2rem;
-            }   
+                div {width: 100%}
 
-            aside section ~ section {margin-top: 1.5rem}
-
-            aside section:not(.empty):first-child {background: rgb(255 255 255 / 30%)}
-
-            aside .empty {
-                font-size: 1rem;
-                color: #bbb;
-
-                em {
-                    color: white;
-                    margin: 1rem 0 0;
-                }
+                section {
+                    font-size: 2rem;
+                    background: rgb(255 255 255 / 15%);
+                    padding: 2rem;
+                }   
+    
+                section ~ section {margin-top: 1.5rem}
+    
+                section:not(.empty):first-child {background: rgb(255 255 255 / 30%)}
+    
+                .empty {
+                    font-size: 1rem;
+                    color: #bbb;
+    
+                    em {
+                        color: white;
+                        margin: 1rem 0 0;
+                    }
+                } 
             }
         }
     </style>
