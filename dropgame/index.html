@@ -106,6 +106,18 @@
                 section:not(.empty):first-child {background: rgb(255 255 255 / 50%)}
             }
         }
+        
+        main.e::after {
+            content: "Data should be appended to the URL in the following format: ?usernameA-score!usernameB-score!";
+            font-size: 1rem;
+            letter-spacing: inherit;
+            width: 100%;
+            margin: 1rem 0 0;
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
     </style>
 </head>
 
