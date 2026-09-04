@@ -43,13 +43,13 @@
 
         main {
             font: 1rem/1 arial, sans-serif;
-            letter-spacing: 0.5em;
             text-align: center;
-            text-transform: uppercase;
-            background: linear-gradient(45deg, #fff, #eee);
-            color: #808080;
+            text-shadow: 0 0 0.5em;
+            background: linear-gradient(-45deg, #000000, #2c5364);
+            color: #fff;
             max-width: 75vw;
             padding: 3rem;
+            border-radius: 3rem;
             transition: opacity 1s ease-in-out;
 
             section {
@@ -117,9 +117,9 @@
         
         .e::after {
             content: "Data should be appended to the URL in the following format: ?usernameA-score!usernameB-score!";
-            font-size: 1.33rem;
-            letter-spacing: inherit;
+            font-size: 1.5rem;
             line-height: 2;
+            text-shadow: none;
             color: #808080;
             width: 100%;
             margin: 3rem 0 0;
