@@ -149,6 +149,7 @@
                 return `<section><span>${name}</span><span>${score}</span></section>`;
             }).join(''));
         };
+        const debug = window.location.href.includes('#');
 
         if (window.location.search) get_data(window.location.search);
         else {
@@ -163,7 +164,9 @@
         }, 2e3);
 
         setTimeout(() => main.removeAttribute('style'), 100);
-        if (!window.location.href.includes('#')) setTimeout(() => main.style.opacity = 0, 8e3);
+
+        if (debug) document.body.classList.add('debug');
+        else setTimeout(() => main.style.opacity = 0, 8e3);
     </script>
 </body>
 
