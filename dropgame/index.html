@@ -11,20 +11,18 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
     <meta property="og:description" content="" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
     <style>
         *{font-size:1em;line-height:1;text-decoration:none;margin:0;padding:0;box-sizing:border-box;scrollbar-width:thin;touch-action:manipulation;}*::before,*::after{line-height:inherit;box-sizing:inherit}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
         input{-webkit-appearance:none;-webkit-border-radius:0;}
         iframe{width:100%;border:none;outline:none;}
 
-        .font {
-          font-family: "Comfortaa", sans-serif;
-          font-optical-sizing: auto;
-          font-weight: 300;
-          font-style: normal;
+        @font-face {
+            font-family: 'rounded';
+            src:url('/../../fonts/rounded.woff2') format('woff2'),
+            url('/../../fonts/rounded.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
 
         html, body {
@@ -42,7 +40,7 @@
         }
 
         main {
-            font: 1rem/1 arial, sans-serif;
+            font: 1rem/1 'rounded', sans-serif;
             letter-spacing: 0.5em;
             text-align: center;
             text-shadow: 0 0 0.5em;
