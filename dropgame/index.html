@@ -47,12 +47,12 @@
             text-align: center;
             text-shadow: 0 0 0.5em;
             text-transform: uppercase;
-            background: linear-gradient(-45deg, #000000, #2c5364);
-            color: #fff;
+            background: linear-gradient(-45deg, #eee, #fff);
+            color: #808080;
             width: 66vw;
             padding: 3rem;
             border-radius: 3rem;
-            box-shadow: 0 0 5rem #2c5364;
+            box-shadow: 0 0 5rem #fff;
             transition: opacity 1s ease-in-out;
 
             section {
@@ -73,6 +73,8 @@
                 span:only-child {
                     width: 100%;
                 }
+
+                span ~ span {color: dodgerblue}
             }
 
             .x {
