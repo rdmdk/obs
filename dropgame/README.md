@@ -21,6 +21,7 @@ Custom CSS: (empty)
 Rename the browser source to "Drop Game Leaderboard"
 
 # Firebot
+## Commands
 
 On the Commands tab, create a New Custom Command
 
@@ -38,7 +39,8 @@ Base Effects:
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
     - Hide
-   
+
+## Events
 On the Events tab, create a New Event
 
 Trigger On: Chat Message
