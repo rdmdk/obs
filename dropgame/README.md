@@ -29,7 +29,7 @@ Trigger: !droprecord
 Base Effects:
 - Set OBS Browser Source URL
   - OBS Browser Source: Drop Game Leaderboard
-  - URL: https://rdmdk.github.io/obs/dropgame/? $readFile[/path/to/file.txt] (remove spaces)
+  - URL: `https://rdmdk.github.io/obs/dropgame/?$readFile[/path/to/file.txt]`
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
     - Show
@@ -53,14 +53,14 @@ Filters
   - Write to File
     - Choose File: /path/to/file.txt
     - Write Mode: Suffix
-    - Text: $replace[$chatMessage, \s.*, "", true]-$replace[$chatMessage, .*?\s|!, "", true]!
+    - Text: `$replace[$chatMessage, \s.*, "", true]-$replace[$chatMessage, .*?\s|!, "", true]!`
   - Conditional Effects
     - If
       - Conditions (all)
-        - Custom: $readFile[/path/to/file.txt] contains $replace[$chatMessage, \s.*, "", true]
-        - Custom: $replace[$chatMessage, *?\s|!, "", true] is greater than $replace[$readFile[/path/to/file.txt], .*$replace[$chatMessage, \s.*, "", true]-|!.*, "", true]
+        - Custom: `$readFile[/path/to/file.txt] contains $replace[$chatMessage, \s.*, "", true]`
+        - Custom: `$replace[$chatMessage, *?\s|!, "", true]` is greater than `$replace[$readFile[/path/to/file.txt], .*$replace[$chatMessage, \s.*, "", true]-|!.*, "", true]`
       - Manage Effects
         - Write To File
           - Choose File: path/to/file.txt
           - Write Mode: Replace
-          - Text: $replace[$readFile[/path/to/file.txt], $user-.*?!, $user-$replace[$chatMessage, *?\s|!, "", true]!, true]
+          - Text: `$replace[$readFile[/path/to/file.txt], $user-.*?!, $user-$replace[$chatMessage, *?\s|!, "", true]!, true]`
