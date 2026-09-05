@@ -136,9 +136,9 @@
 
                 section:nth-child(1) {filter: grayscale(0)}
                 
-                section:nth-child(2) {filter: grayscale(0.66)}
+                section:nth-child(2) {filter: grayscale(0.33)}
 
-                section:nth-child(3) {filter: grayscale(0.33)}
+                section:nth-child(3) {filter: grayscale(0.66)}
             }
         }
 
@@ -146,17 +146,17 @@
         main::after {
             content: "";
             border: 1rem dotted dodgerblue;
-            border-radius: 5rem;
+            border-radius: 5.5rem;
             filter: drop-shadow(0 0 0.5rem cyan);
             position: absolute;
-            inset: -2rem;
+            inset: -2.5rem;
             z-index: -1;
         }
 
         main::after {
-            border-radius: 7rem;
+            border-radius: 7.5rem;
             opacity: 0.5;
-            inset: -4rem;
+            inset: -4.5rem;
         }
 
         .debug {
