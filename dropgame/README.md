@@ -53,7 +53,7 @@ Filters
   - Write to File
     - Choose File: /path/to/file.txt
     - Write Mode: Suffix
-    - Text: $user-$replace[$chatMessage, .*?\s|!, "", true]!
+    - Text: $replace[$chatMessage, \s.*, "", true]-$replace[$chatMessage, .*?\s|!, "", true]!
   - Conditional Effects
     - If
       - Conditions (all)
