@@ -1,6 +1,6 @@
 A stylized leaderboard for use with https://www.pixelplush.dev/twitch.html?type=parachute
 
-I use Firebot to store and provide data to the website in order to render the scores but any stream bot service that supports writing to local files should work
+I use Firebot to store and provide data to the website in order to render the scores but any stream bot service that supports reading and writing to local files should work
 
 # Text file
 
