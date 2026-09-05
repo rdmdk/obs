@@ -45,6 +45,19 @@
             display: grid;
             place-content: center;
             user-select: none;
+            position: relative;
+        }
+
+        body:has(.e)::after {
+            content: "Data should be appended to the URL in the following format: ?usernameA-score!usernameB-score!";
+            font: 1.5rem/2 'rounded' arial, sans-serif;
+            color: #808080;
+            width: 100%;
+            margin: 3rem 0 0;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
 
         main {
@@ -128,7 +141,8 @@
             }
         }
 
-        main::before {
+        main::before,
+        main::after {
             content: "";
             border: 1rem dotted dodgerblue;
             border-radius: 5rem;
@@ -138,20 +152,11 @@
             z-index: -1;
         }
 
-        .e {position: relative}
-        
-        .e::after {
-            content: "Data should be appended to the URL in the following format: ?usernameA-score!usernameB-score!";
-            font-size: 1.5rem;
-            line-height: 2;
-            text-shadow: none;
-            color: #808080;
-            width: 100%;
-            margin: 3rem 0 0;
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
+        main::after {
+            border-color: cyan;
+            border-radius: 7rem;
+            filter: drop-shadow(0 0 0.5rem dodgerblue);
+            inset: -4rem;
         }
 
         .debug {
