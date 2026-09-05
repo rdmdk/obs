@@ -9,10 +9,15 @@ A new text file will need to be created on your computer to store the Parachute 
 # OBS
 
 Add a new browser source (preferably in a scene that is always visible)
+
 URL: https://rdmdk.github.io/obs/dropgame/
+
 Width: 1920
+
 Height: 1080
+
 Custom CSS: (empty)
+
 Rename the browser source to "Drop Game Leaderboard"
 
 # Firebot
