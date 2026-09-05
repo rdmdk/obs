@@ -95,10 +95,7 @@
                     width: 100%;
                 }
 
-                span ~ span {
-                    font-family: 'pixel';
-                    color: dodgerblue;
-                }
+                span ~ span {font-family: 'pixel'}
             }
 
             .x {
@@ -131,14 +128,13 @@
                     font-size: 5rem;
                     text-shadow: 0 0 0.05em, 0 0 0.3em;
                     padding: 1.5rem;
-                    filter: grayscale(1);
                 } 
 
-                section:nth-child(1) {filter: grayscale(0)}
+                section:nth-child(1) span ~ span {color: cyan}
                 
-                section:nth-child(2) {filter: grayscale(0.33)}
+                section:nth-child(2) span ~ span {color: #3EC8FF}
 
-                section:nth-child(3) {filter: grayscale(0.66)}
+                section:nth-child(3) span ~ span {color: dodgerblue}
             }
         }
 
