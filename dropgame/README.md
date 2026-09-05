@@ -24,23 +24,27 @@ Rename the browser source to "Drop Game Leaderboard"
 
 On the Commands tab, create a New Custom Command
 Trigger: !droprecord
-Base Effects:
-- Set OBS Browser Source URL
-  - OBS Browser Source: Drop Game Leaderboard
-  - URL: https://rdmdk.github.io/obs/dropgame/? $readFile[/path/to/file.txt] (remove spaces)
-- Toggle OBS Source Visibility
-  - Sources: Drop Game Leaderboard
-    - Show
-- Delay
-  - Duration: 10 seconds
-- Toggle OBS Source Visibility
-  - Sources: Drop Game Leaderboard
-    - Hide
+- Base Effects:
+  - Set OBS Browser Source URL
+    - OBS Browser Source: Drop Game Leaderboard
+    - URL: https://rdmdk.github.io/obs/dropgame/? $readFile[/path/to/file.txt] (remove spaces)
+  - Toggle OBS Source Visibility
+    - Sources: Drop Game Leaderboard
+      - Show
+  - Delay
+    - Duration: 10 seconds
+  - Toggle OBS Source Visibility
+    - Sources: Drop Game Leaderboard
+      - Hide
    
 On the Events tab, create a New Event
+
 Trigger On: Chat Message
+
 Name: Drop Game
+
 Filters
+
 - Message Text contains landed for
 - Viewer's Roles include Streamer
 - Manage Effects
