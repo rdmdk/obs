@@ -43,18 +43,18 @@ Name: Drop Game
 Filters
 - Message Text contains landed for
 - Viewer's Roles include Streamer
-Manage Effects
-- Write to File
-  - Choose File: /path/to/file.txt
-  - Write Mode: Suffix
-  - Text: $user-$replace[$chatMessage, .*?\s|!, "", true]!
-- Conditional Effects
-  - If
-    - Conditions (all)
-      - Custom: $readFile[/path/to/file.txt] contains $replace[$chatMessage, \s.*, "", true]
-      - Custom: $replace[$chatMessage, *?\s|!, "", true] is greater than $replace[$readFile[/path/to/file.txt], .*$replace[$chatMessage, \s.*, "", true]-|!.*, "", true]
-    - Manage Effects
-      - Write To File
-        - Choose File: path/to/file.txt
-        - Write Mode: Replace
-        - Text: $replace[$readFile[/path/to/file.txt], $user-.*?!, $user-$replace[$chatMessage, *?\s|!, "", true]!, true]
+- Manage Effects
+  - Write to File
+    - Choose File: /path/to/file.txt
+    - Write Mode: Suffix
+    - Text: $user-$replace[$chatMessage, .*?\s|!, "", true]!
+  - Conditional Effects
+    - If
+      - Conditions (all)
+        - Custom: $readFile[/path/to/file.txt] contains $replace[$chatMessage, \s.*, "", true]
+        - Custom: $replace[$chatMessage, *?\s|!, "", true] is greater than $replace[$readFile[/path/to/file.txt], .*$replace[$chatMessage, \s.*, "", true]-|!.*, "", true]
+      - Manage Effects
+        - Write To File
+          - Choose File: path/to/file.txt
+          - Write Mode: Replace
+          - Text: $replace[$readFile[/path/to/file.txt], $user-.*?!, $user-$replace[$chatMessage, *?\s|!, "", true]!, true]
