@@ -22,7 +22,7 @@ Trigger: !droprecord
 Base Effects:
 - Set OBS Browser Source URL
   - OBS Browser Source: Drop Game Leaderboard
-  - URL: https://rdmdk.github.io/obs/dropgame/?$readFile[/path/to/file.txt]
+  - URL: https://rdmdk.github.io/obs/dropgame/? $readFile[/path/to/file.txt] (remove spaces)
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
     - Show
@@ -46,4 +46,10 @@ Manage Effects
 - Conditional Effects
   - If
     - Conditions (all)
-      - $readFile[/path/to/file.txt] contains $replace[$chatMessage, \s.*, "", true]
+      - Custom: $readFile[/path/to/file.txt] contains $replace[$chatMessage, \s.*, "", true]
+      - Custom: $replace[$chatMessage, *?\s|!, "", true] is greater than $replace[$readFile[/path/to/file.txt], .*$replace[$chatMessage, \s.*, "", true]-|!.*, "", true]
+    - Manage Effects
+      - Write To File
+        - Choose File: path/to/file.txt
+        - Write Mode: Replace
+        - Text: $replace[$readFile[/path/to/file.txt], $user-.*?!, $user-$replace[$chatMessage, *?\s|!, "", true]!, true]
