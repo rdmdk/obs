@@ -63,6 +63,7 @@
             section {
                 line-height: inherit;
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
                 gap: 1.5rem;
                 
@@ -81,7 +82,9 @@
 
                 span ~ span {
                     font-family: 'pixel';
-                    font-size: 1.5rem;
+                    font-size: 4rem;
+                    letter-spacing: 0;
+                    text-shadow: 0 0 0.05em;
                     color: dodgerblue;
                 }
             }
@@ -112,7 +115,16 @@
                 section {
                     font-size: 2rem;
                     padding: 1.5rem;
+                    filter: grayscale(1);
                 } 
+
+                section:nth-child(1) {filter: grayscale(0)}
+                
+                section:nth-child(2) {filter: grayscale(0.25)}
+
+                section:nth-child(3) {filter: grayscale(0.5)}
+
+                section:nth-child(4) {filter: grayscale(0.75)}
             }
         }
 
