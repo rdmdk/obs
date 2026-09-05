@@ -25,6 +25,14 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: 'pixel';
+            src:url('/obs/fonts/pixel.woff2') format('woff2'),
+            url('/obs/fonts/pixel.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         html, body {
             background: transparent;
             width: 100%;
@@ -44,12 +52,12 @@
             letter-spacing: 0.5em;
             text-align: center;
             text-transform: uppercase;
-            background: linear-gradient(-45deg, #fff, #d8d8d8);
+            background: linear-gradient(-45deg, #fff, #eee);
             color: #444;
             width: 66vw;
             padding: 3rem;
             border-radius: 3rem;
-            box-shadow: 0 0 5rem #ddd;
+            box-shadow: 0 0 5rem #f8f8f8;
             transition: opacity 1s ease-in-out;
 
             section {
@@ -103,6 +111,8 @@
                 }   
     
                 section ~ section {
+                    font-family: 'pixel';
+                    font-size: 1.5rem;
                     opacity: 0.9;
                 }    
             }
