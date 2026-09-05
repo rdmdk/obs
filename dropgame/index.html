@@ -50,10 +50,12 @@
 
         body:has(.e)::after {
             content: "Data should be appended to the URL in the following format: ?usernameA-score!usernameB-score!";
-            font: 1.5rem/2 'rounded' arial, sans-serif;
+            font: 1.75rem / 2 'rounded', arial, sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
             color: #808080;
-            width: 100%;
-            margin: 3rem 0 0;
+            margin: 3rem 3rem 2rem;
             display: block;
             position: absolute;
             bottom: 0;
@@ -134,11 +136,9 @@
 
                 section:nth-child(1) {filter: grayscale(0)}
                 
-                section:nth-child(2) {filter: grayscale(0.25)}
+                section:nth-child(2) {filter: grayscale(0.66)}
 
-                section:nth-child(3) {filter: grayscale(0.5)}
-
-                section:nth-child(4) {filter: grayscale(0.75)}
+                section:nth-child(3) {filter: grayscale(0.33)}
             }
         }
 
