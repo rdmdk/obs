@@ -137,18 +137,6 @@
 
                 section:nth-child(3) span ~ span {color: dodgerblue}
             }
-
-            aside:has(.t)::after {
-                content: "";
-                background: linear-gradient(0deg, rgb(19 19 19 / 100%), rgb(19 19 19 / 0%));
-                width: 100%;
-                height: 2rem;
-                animation: fade 2s forwards ease-in-out;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 100;
-            }
         }
 
         main::before,
@@ -171,13 +159,6 @@
 
         .debug {
             background: #ddd;
-        }
-
-        @keyframes fade {
-            0%, 
-            100% {opacity: 0}
-            10%,
-            70% {opacity: 1}
         }
     </style>
 </head>
