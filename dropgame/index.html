@@ -124,8 +124,11 @@
 
                 div {
                     width: 100%;
+                    transform: translateY(calc(-100% + 24rem));
                     transition: transform 2s ease-in-out;
                 }
+
+                .t {transform: translateY(0)}
 
                 section {
                     font-size: 5rem;
@@ -192,10 +195,7 @@
             main.classList.add('e');
         }
 
-        setTimeout(() => {
-            const y = aside.getBoundingClientRect().top - div.getBoundingClientRect().top;
-            div.style.transform = `translateY(${y}px)`;
-        }, 1e3);
+        setTimeout(() => div.classList.add('t'), 1e3);
 
         setTimeout(() => main.removeAttribute('style'), 100);
 
