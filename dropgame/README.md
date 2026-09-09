@@ -64,7 +64,7 @@ Filters
   - Conditional Effects
     - If
       - Conditions (any)
-        - Custom: `$$drop_game_leaderboard[$replace[$chatMessage, \s.*, "", true]]` is ``
+        - Custom: `$$drop_game_leaderboard[$replace[$chatMessage, \s.*, "", true]]` is ` `
         - Custom: `$replace[$chatMessage, .*\s|!, "", true]` is greater than `$$drop_game_leaderboard[$replace[$chatMessage, \s.*, "", true]]`
       - Manage Effects
         - Custom Variable
