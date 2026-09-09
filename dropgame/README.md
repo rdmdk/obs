@@ -1,10 +1,6 @@
 A stylized leaderboard for use with https://www.pixelplush.dev/twitch.html?type=parachute
 
-I use Firebot to store and provide data to the website in order to render the scores but any stream bot service that supports reading and writing to local files should work
-
-# Text file
-
-A new text file will need to be created on your computer to store the Parachute game scores, and the path to the file will be referenced as path/to/file.txt in these instructions.
+I use Firebot to store and provide data to the website in order to render the scores but any stream bot service that supports custom variables should work
 
 # OBS
 
@@ -26,12 +22,23 @@ Rename the browser source to "Drop Game Leaderboard"
 
 On the Commands tab, create a New Custom Command
 
+Skip the Trigger and go straight to Base Effects as we will only be testing this command and not saving it
+
+Base Effects:
+- Custom Variable
+  - Variable Name: drop_game_leaderboard
+  - Variable Data: {}
+ 
+Once the Custom Variable is added, click the blue play button beside Manage Effects to run the effects list. This should have now created the drop_game_leaderboard variable and the command can now be discarded.
+
+Create a New Custom Command
+
 Trigger: !droprecord
 
 Base Effects:
 - Set OBS Browser Source URL
   - OBS Browser Source: Drop Game Leaderboard
-  - URL: `https://rdmdk.github.io/obs/dropgame/?$readFile[/path/to/file.txt]`
+  - URL: `https://rdmdk.github.io/obs/dropgame/?$$drop_game_leaderboard`
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
     - Show
@@ -56,20 +63,11 @@ Filters
 - Manage Effects
   - Conditional Effects
     - If
-      - Conditions (all)
-        - Custom: `$readFile[/path/to/file.txt]` contains `$replace[$chatMessage, \s.*, "", true]`
+      - Conditions (any)
+        - Custom: `$$drop_game_leaderboard[$replace[$chatMessage, \s.*, "", true]]` is ``
+        - Custom: `$replace[$chatMessage, .*\s|!, "", true]` is greater than `$$drop_game_leaderboard[$replace[$chatMessage, \s.*, "", true]]`
       - Manage Effects
-        - Conditional Effects
-          - If
-            - Conditions (all)
-              - Custom: `$replace[$chatMessage, .*\s|!, "", true]` is greater than `$replace[$readFile[/path/to/file.txt], .*$replace[$chatMessage, \s.*, "", true]-|!.*, "", true]`
-            - Write To File
-              - Choose File: /path/to/file.txt
-              - Write Mode: Replace
-              - Text: `$replace[$readFile[/path/to/file.txt], $replace[$chatMessage, \s.*, "", true]-\d+\.\d+!, $replace[$chatMessage, \s.*, "", true]-$replace[$chatMessage, .*\s|!, "", true]!, true]`
-    - Otherwise
-      - Manage Effects
-        - Write To File
-          - Choose File: /path/to/file.txt
-          - Write Mode: Suffix
-          - Text: `$replace[$chatMessage, \s.*, "", true]-$replace[$chatMessage, .*\s|!, "", true]!`
+        - Custom Variable
+          - Variable Name: drop_game_leaderboard
+          - Variable Data: `$replace[$chatMessage, .*\s|!, "", true]`
+          - Property Path: `$replace[$chatMessage, \s.*, "", true]`
