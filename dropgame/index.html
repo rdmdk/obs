@@ -173,7 +173,7 @@
         const aside = main.querySelector('aside');
         const div = aside.querySelector('div');
         const get_data = (data) => {
-            data = JSON.parse(decodeURIComponent(data));
+            data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
             div.innerHTML = Object.entries(data).map(([k, v]) => `<section><span>${k}</span><span>${v}</span></section>`).join('');
         };
         const debug = window.location.href.includes('#');
