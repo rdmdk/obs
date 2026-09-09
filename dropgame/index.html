@@ -174,7 +174,7 @@
         const div = aside.querySelector('div');
         const get_data = (data) => {
             data = JSON.parse(decodeURIComponent(data));
-            div.innerHTML = Object.entries(data).map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join('');
+            div.innerHTML = Object.entries(data).map(([k, v]) => `<section><span>${k}</span><span>${v}</span></section>`).join('');
         };
         const debug = window.location.href.includes('#');
 
