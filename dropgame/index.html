@@ -173,12 +173,15 @@
         const aside = main.querySelector('aside');
         const div = aside.querySelector('div');
         const get_data = (data) => {
+            console.log(data);
+            /*
             data = (data.startsWith('?') ? data.substring(1) : data).split('!').filter(Boolean);
             data = [...data.reduce((m,s)=>(k=s.slice(0,s.lastIndexOf('-')),n=parseFloat(s.slice(s.lastIndexOf('-')+1)),!m.has(k)||n>m.get(k).n?m.set(k,{v:s,n}):m),new Map()).values()].sort((a,b)=>b.n-a.n).map(o=>o.v);
             div.insertAdjacentHTML('beforeend', data.map(x => {
                 const [name, score] = x.split('-');
                 return `<section><span>${name}</span><span>${score}</span></section>`;
             }).join(''));
+            */
         };
         const debug = window.location.href.includes('#');
 
