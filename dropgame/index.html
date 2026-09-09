@@ -173,14 +173,17 @@
         const aside = main.querySelector('aside');
         const div = aside.querySelector('div');
         const get_data = (data) => {
-            data = JSON.parse(decodeURIComponent(data));
+            data = JSON.parse(decodeURIComponent(data.substring(1)));
             div.innerHTML = Object.entries(data).map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join('');
         };
         const debug = window.location.href.includes('#');
 
         if (window.location.search) get_data(window.location.search);
         else {
-            const data = '?' + Array.from({ length: 15 }, (_, i) => `user${i+1}-${(Math.random() * 99 + 1).toFixed(2)}`).join('!') + '!';
+            const data = '?' + Object.fromEntries(Array.from({ length: 15 }, (_, i) => [
+                `user${i + 1}`, 
+                Number((Math.random() * 100).toFixed(2))
+            ]);
             get_data(data);
             main.classList.add('e');
         }
