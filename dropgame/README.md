@@ -27,7 +27,7 @@ Skip the Trigger and go straight to Base Effects as we will only be testing this
 Base Effects:
 - Custom Variable
   - Variable Name: drop_game_leaderboard
-  - Variable Data: {}
+  - Variable Data: `{}`
  
 Once the Custom Variable is added, click the blue play button beside Manage Effects to run the effects list. This should have now created the drop_game_leaderboard variable and the command can now be discarded.
 
