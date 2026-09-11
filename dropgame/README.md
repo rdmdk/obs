@@ -1,6 +1,10 @@
-A stylized leaderboard for use with https://www.pixelplush.dev/twitch.html?type=parachute
+A stylized leaderboard for use with https://www.pixelplush.dev/games?type=parachute
 
 I use Firebot to store and provide data to the website in order to render the scores but any stream bot service that supports custom variables should work
+
+# Parachute Drop Game
+
+Score in chat must be enabled for the leaderboard to work
 
 # OBS
 
