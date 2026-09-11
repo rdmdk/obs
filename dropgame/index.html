@@ -175,6 +175,7 @@
         const get_data = (data) => {
             data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
             div.innerHTML = Object.entries(data).sort(([, a], [, b]) => b - a).map(([k, v]) => `<section><span>${k}</span><span>${v}</span></section>`).join('');
+            div.style.transitionDuration = `${Object.entries(data).length / 2}s`;
         };
         const debug = window.location.href.includes('#');
 
@@ -193,7 +194,7 @@
         setTimeout(() => main.removeAttribute('style'), 100);
 
         if (debug) document.body.classList.add('debug');
-        else setTimeout(() => main.style.opacity = 0, 500 * Object.entries(data).length);
+        else setTimeout(() => main.style.opacity = 0, 2e3 + (500 * Object.entries(data).length));
     </script>
 </body>
 
