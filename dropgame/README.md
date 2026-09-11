@@ -4,7 +4,7 @@ I use Firebot to store and provide data to the website in order to render the sc
 
 # Parachute Drop Game
 
-Score in chat must be enabled for the leaderboard to work
+`Score in Chat` must be enabled for the leaderboard to work
 
 # OBS
 
