@@ -174,7 +174,7 @@
         const div = aside.querySelector('div');
         const get_data = (data) => {
             data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
-            div.innerHTML = Object.entries(data).sort(([, a], [, b]) => b - a).map(([k, v]) => `<section><span>${k}</span><span>${v}</span></section>`).join('');
+            div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<section><span>${k}</span><span>${v}</span></section>`).join('');
             div.style.transitionDuration = `${Object.entries(data).length / 2}s`;
         };
         const debug = window.location.href.includes('#');
