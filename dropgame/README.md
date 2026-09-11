@@ -41,12 +41,12 @@ Base Effects:
   - URL: `https://rdmdk.github.io/obs/dropgame/?$$drop_game_leaderboard`
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
-    - Show
+    - Hide
 - Delay
-  - Duration: 10 seconds
+  - Duration: 1 seconds
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
-    - Hide
+    - Show
 
 ## Events
 
