@@ -43,7 +43,7 @@ Base Effects:
   - Sources: Drop Game Leaderboard
     - Hide
 - Delay
-  - Duration: 1 seconds
+  - Duration: 1 second
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
     - Show
