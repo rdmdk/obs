@@ -193,7 +193,7 @@
         setTimeout(() => main.removeAttribute('style'), 100);
 
         if (debug) document.body.classList.add('debug');
-        else setTimeout(() => main.style.opacity = 0, 8e3);
+        else setTimeout(() => main.style.opacity = 0, 500 * Object.entries(data).length);
     </script>
 </body>
 
