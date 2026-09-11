@@ -38,7 +38,7 @@ Trigger: !droprecord
 Base Effects:
 - Set OBS Browser Source URL
   - OBS Browser Source: Drop Game Leaderboard
-  - URL: `https://rdmdk.github.io/obs/dropgame/?$$drop_game_leaderboard`
+  - URL: `https://rdmdk.github.io/obs/dropgame/?$replace[$$drop_game_leaderboard, %20, ""]`
 - Toggle OBS Source Visibility
   - Sources: Drop Game Leaderboard
     - Hide
