@@ -182,7 +182,7 @@
 
         if (wls) get_data(wls.substring(1));
         else {
-            const r_n = Math.floor(Math.random() * 20) + 5;
+            const r_n = Math.floor(Math.random() * 45) + 5;
             const data = Object.fromEntries(Array.from({ length: r_n }, (_, i) => [
                 `user${i + 1}`, 
                 Number((Math.random() * 100).toFixed(2))
