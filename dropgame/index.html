@@ -180,10 +180,10 @@
         const wls = window.location.search;
         const debug = window.location.href.includes('#');
 
-        if (wls && typeof wls.substring(1) === 'string') get_data(wls.substring(1));
+        if (wls) get_data(wls.substring(1));
         else {
-            const wls_n = wls && typeof wls.substring(1) === 'number' ? Number(wls.substring(1)) : 15;
-            const data = Object.fromEntries(Array.from({ length: wls_n }, (_, i) => [
+            const r_n = Math.floor(Math.random() * 20) + 5;
+            const data = Object.fromEntries(Array.from({ length: r_n }, (_, i) => [
                 `user${i + 1}`, 
                 Number((Math.random() * 100).toFixed(2))
             ]));
