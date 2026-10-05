@@ -98,7 +98,11 @@
 
         section em:first-child {margin-top: 0}
         section em:last-child {margin-bottom: 1.5rem}
-        section em span:last-child {color: dodgerblue}
+        section em span ~ span {color: #205991}
+
+        section:nth-child(1) em span ~ span {color: cyan}
+        section:nth-child(2) em span ~ span {color: #42d2ff}
+        section:nth-child(3) em span ~ span {color: dodgerblue}
         
     </style>
 </head>
