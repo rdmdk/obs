@@ -45,6 +45,7 @@
         main {
             text-shadow: 0 0 0.25rem;
             margin: 3rem;
+            transition: opacity 2s linear;
             position: relative;
         }
         
@@ -77,16 +78,24 @@
             color: #fff;
             overflow: hidden;
         }
-        
+
         section div div {
+            transition: transform 2s ease-in-out;
+            transform: translateY(calc(100% - 2rem));
+        }
+
+        section div .t {transform: none}
+        
+        section em {
             font-size: 1.75em;
+            font-style: normal;
             margin: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
         }
         
-        section div div:last-child {margin-bottom: 1.5rem}
-        section div div span:last-child {color: dodgerblue}
+        section em:last-child {margin-bottom: 1.5rem}
+        section em span:last-child {color: dodgerblue}
         
     </style>
 </head>
@@ -96,16 +105,16 @@
         <section>
             <div>
                 <h1>Drop Game Leaderboard <span></span></h1>
+                <div></div>
             </div>
         </section>
     </main>
     <script>
         const main = document.querySelector('main');
-        const div = main.querySelector('div');
+        const div = main.querySelector('div div');
         const get_data = (data) => {
             data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
-            console.log(data);
-            div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join('');
+            div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
             div.style.transitionDuration = `${Object.entries(data).length / 2}s`;
         };
         const wls = window.location.search;
