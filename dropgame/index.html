@@ -124,7 +124,7 @@
         const get_data = (data) => {
             data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
             div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
-            div.style.transitionDuration = `${Object.entries(data).length / 2}s`;
+            setTimeout(() => div.style.transitionDuration = `${Object.entries(data).length / 2}s`, 1e3);
         };
         const wls = window.location.search;
         const debug = window.location.href.includes('#');
