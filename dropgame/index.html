@@ -95,19 +95,7 @@
     <main>
         <section>
             <div>
-                <h1>Drop Game Leaderboard <span>2026</span></h1>
-                <div>
-                    <span>coasterbricks97</span>
-                    <span>83.61</span>
-                </div>
-                <div>
-                    <span>rdmdk</span>
-                    <span>49.20</span>
-                </div>
-                <div>
-                    <span>coasterbricks97</span>
-                    <span>83.61</span>
-                </div>
+                <h1>Drop Game Leaderboard <span></span></h1>
             </div>
         </section>
     </main>
@@ -116,6 +104,7 @@
         const div = main.querySelector('div');
         const get_data = (data) => {
             data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
+            console.log(data);
             div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join('');
             div.style.transitionDuration = `${Object.entries(data).length / 2}s`;
         };
@@ -135,6 +124,8 @@
 
         if (debug) document.body.classList.add('debug');
         else setTimeout(() => main.style.opacity = 0, ((div.children.length / 2) + 3) * 1e3);
+
+        main.querySelector('h1 span').innerText = new Date().getFullYear();
     </script>
 </body>
 
