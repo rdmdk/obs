@@ -13,168 +13,110 @@
     <meta property="og:description" content="" />
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
         *{font-size:1em;line-height:1;text-decoration:none;margin:0;padding:0;box-sizing:border-box;scrollbar-width:thin;touch-action:manipulation;}*::before,*::after{line-height:inherit;box-sizing:inherit}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
-        input{-webkit-appearance:none;-webkit-border-radius:0;}
-        iframe{width:100%;border:none;outline:none;}
-
-        @font-face {
-            font-family: 'rounded';
-            src:url('/obs/fonts/rounded.woff2') format('woff2'),
-            url('/obs/fonts/rounded.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'pixel';
-            src:url('/obs/fonts/pixel.woff2') format('woff2'),
-            url('/obs/fonts/pixel.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
 
         html, body {
             background: transparent;
             width: 100%;
             height: 100%;
         }
-
-        html {font-size: 0.66vw}
-
+        
+        html {font-size: 2.75vw}
+        
         body {
-            display: grid;
-            place-content: center;
-            user-select: none;
-            position: relative;
+            font: 1rem/1 'Silkscreen', arial;
+            background:#eee;
         }
-
-        body:has(.e)::after {
-            content: 'Data should be appended to the URL in the following format: ?{"username1":score,"username2":score,"username3":score}';
-            font: 1.75rem / 2 'rounded', arial, sans-serif;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.5em;
-            color: #808080;
-            margin: 3rem 3rem 2rem;
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        
+        h1 {
+            font-size: 1em;
+            color: cyan;
+            margin: 1.5rem;
+            display: flex;
+            justify-content: space-between;
         }
-
-        main {
-            font: 4rem/1 'pixel', sans-serif;
-            text-align: center;
-            text-shadow: 0 0 0.1em, 0 0 0.5em;
-            text-transform: uppercase;
-            background: linear-gradient(-45deg, #000, #333);
+        
+        h1 span {
             color: #fff;
-            width: 57.5vw;
-            padding: 3rem;
-            border-radius: 3rem;
-            transition: opacity 1s ease-in-out;
-            position: relative;
-
-            section {
-                line-height: inherit;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 1.5rem;
-                
-                span {
-                    line-height: inherit;
-
-                    em {
-                        font-style: normal;
-                        display: block;
-                    }
-                }
-
-                span:only-child {
-                    width: 100%;
-                }
-
-                span ~ span {font-family: 'pixel'}
-            }
-
-            .x {
-                font-family: 'rounded';
-                font-size: 2.5rem;
-                letter-spacing: 0.5em;
-                color: #42d2ff;
-                padding: 1rem 0 0;
-            }
-
-            .y {
-                padding: 0 2rem;
-                opacity: 0.75;
-            }
-
-            aside {
-                max-height: 24rem;
-                margin-top: 3rem;
-                overflow: hidden;
-                position: relative;
-
-                div {
-                    width: 100%;
-                    transform: translateY(calc(-100% + 24rem));
-                    transition: transform 2s ease-in-out;
-                }
-
-                .t {transform: translateY(0)}
-
-                section {
-                    font-size: 5rem;
-                    text-shadow: 0 0 0.05em, 0 0 0.3em;
-                    padding: 1.5rem;
-                } 
-
-                section:nth-child(1) span ~ span {color: cyan}
-                
-                section:nth-child(2) span ~ span {color: #42d2ff}
-
-                section:nth-child(3) span ~ span {color: dodgerblue}
-            }
         }
-
+        
+        main {
+            text-shadow: 0 0 0.25rem;
+            margin: 3rem;
+            position: relative;
+        }
+        
         main::before,
         main::after {
             content: "";
-            border: 1rem dotted dodgerblue;
-            border-radius: 5.5rem;
-            filter: drop-shadow(0 0 0.5rem cyan);
             position: absolute;
-            inset: -2.5rem;
-            z-index: -1;
+            border: 0.35em dashed transparent;
         }
-
+        
+        main::before {
+            border-color: dodgerblue;
+            inset: -1em;
+            filter: drop-shadow(0 0 0.1rem dodgerblue);
+        }
+        
         main::after {
-            border-color: #8ec8ff;
-            border-radius: 7.5rem;
-            filter: drop-shadow(0 0 0.5rem #bcffff);
-            inset: -4.5rem;
+            border-color: cyan;
+            inset: -2em;
+            filter: drop-shadow(0 0 0.1rem cyan);
         }
-
-        .debug {
-            background: #ddd;
+        
+        section {
+            border: 0.35em dashed #222;
+            filter: drop-shadow(0 0 0.1rem #222);
         }
+        
+        section > div {
+            background: #222;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        section div div {
+            font-size: 1.75em;
+            margin: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        section div div:last-child {margin-bottom: 1.5rem}
+        section div div span:last-child {color: dodgerblue}
+        
     </style>
 </head>
 
 <body>
-    <main class="font" style="opacity: 0">
-        <section class="x"><span>Drop Game Leaderboard</span></section>
-        <aside><div></div></aside>
+    <main>
+        <section>
+            <div>
+                <h1>Drop Game Leaderboard <span>2026</span></h1>
+                <div>
+                    <span>coasterbricks97</span>
+                    <span>83.61</span>
+                </div>
+                <div>
+                    <span>rdmdk</span>
+                    <span>49.20</span>
+                </div>
+                <div>
+                    <span>coasterbricks97</span>
+                    <span>83.61</span>
+                </div>
+            </div>
+        </section>
     </main>
     <script>
         const main = document.querySelector('main');
-        const aside = main.querySelector('aside');
-        const div = aside.querySelector('div');
+        const div = main.querySelector('div');
         const get_data = (data) => {
             data = typeof data === 'object' ? data : JSON.parse(decodeURIComponent(data));
-            div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<section><span>${k}</span><span>${v}</span></section>`).join('');
+            div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join('');
             div.style.transitionDuration = `${Object.entries(data).length / 2}s`;
         };
         const wls = window.location.search;
@@ -190,10 +132,6 @@
             get_data(data);
             main.classList.add('e');
         }
-
-        setTimeout(() => div.classList.add('t'), 1e3);
-
-        setTimeout(() => main.removeAttribute('style'), 100);
 
         if (debug) document.body.classList.add('debug');
         else setTimeout(() => main.style.opacity = 0, ((div.children.length / 2) + 3) * 1e3);
