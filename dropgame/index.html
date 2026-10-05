@@ -32,15 +32,14 @@
         
         h1 {
             font-size: 1em;
+            background: #222;
             color: cyan;
-            margin: 1.5rem;
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
         }
         
-        h1 span {
-            color: #fff;
-        }
+        h1 span {color: #fff}
         
         main {
             text-shadow: 0 0 0.25rem;
@@ -77,6 +76,7 @@
         section > div {
             background: #222;
             color: #fff;
+            max-height: 8.6rem;
             overflow: hidden;
         }
 
@@ -93,8 +93,10 @@
             margin: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
+            gap: 1.5rem;
         }
-        
+
+        section em:first-child {margin-top: 0}
         section em:last-child {margin-bottom: 1.5rem}
         section em span:last-child {color: dodgerblue}
         
