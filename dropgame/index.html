@@ -140,7 +140,7 @@
         section em:nth-child(2) span ~ span {color: var(--mediumblue)}
         section em:nth-child(3) span ~ span {color: var(--blue)}
 
-        .debug::after {
+        .e::after {
             content: 'data should be appended to the URL in this format: ?{"user1":00.00,"user2":00.00}';
             line-height: 1.5;
             width: 100%;
@@ -182,7 +182,7 @@
                 Number((Math.random() * 100).toFixed(2))
             ]));
             get_data(data);
-            main.classList.add('e');
+            document.body.classList.add('e');
         }
 
         setTimeout(() => {
