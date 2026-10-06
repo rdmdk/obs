@@ -81,6 +81,18 @@
             color: #fff;
             max-height: 8.6rem;
             overflow: hidden;
+            position: relative;
+        }
+
+        section > div::after {
+            content: "";
+            background: linear-gradient(90deg, rgb(34 34 34), rgb(34 34 34 / 100%));
+            width: 100%;
+            heigth: 1rem;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
 
         section div div {
