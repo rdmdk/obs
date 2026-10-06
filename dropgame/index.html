@@ -20,7 +20,7 @@
             --blue: dodgerblue;
             --mediumblue: #42d2ff;
             --darkblue: #1f74c8;
-            --gray: #666;
+            --gray: #444;
             --clear: transparent;
         }
 
@@ -106,12 +106,12 @@
         }
 
         section > div::before {
-            background: linear-gradient(0deg, var(--transparent), var(--gray));
+            background: linear-gradient(0deg, var(--clear), var(--gray));
             top: 0;
         }
         
         section > div::after {
-            background: linear-gradient(0deg, var(--gray), var(--transparent));
+            background: linear-gradient(0deg, var(--gray), var(--clear));
             bottom: 0;
         }
 
