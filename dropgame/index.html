@@ -79,7 +79,8 @@
         section > div {
             background: #222;
             color: #fff;
-            max-height: 8.6rem;
+            max-height: 9.5rem;
+            padding: 1rem 0;
             overflow: hidden;
             position: relative;
         }
@@ -90,16 +91,19 @@
             width: 100%;
             height: 1rem;
             display: block;
-            position: relative;
+            position: absolute;
+            left: 0;
             z-index: 10;
         }
 
         section > div::before {
             background: linear-gradient(0deg, rgb(34 34 34 / 0%), rgb(34 34 34));
+            top: 0;
         }
         
         section > div::after {
             background: linear-gradient(0deg, rgb(34 34 34), rgb(34 34 34 / 0%));
+            bottom: 0;
         }
 
         section div div {
@@ -119,7 +123,7 @@
         }
 
         section em:first-child {margin-top: 0}
-        section em:last-child {margin-bottom: 1.5rem}
+        section em:last-child {margin-bottom: 0}
         section em span ~ span {color: #1f74c8}
 
         section em:nth-child(1) span ~ span {color: cyan}
