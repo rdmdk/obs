@@ -19,6 +19,7 @@
             --mediumblue: #42d2ff;
             --darkblue: #1f74c8;
             --gray: #666;
+            --clear: transparent;
         }
         
         @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
@@ -105,12 +106,12 @@
         }
 
         section > div::before {
-            background: linear-gradient(0deg, rgb(34 34 34 / 0%), var(--gray));
+            background: linear-gradient(0deg, var(--transparent), var(--gray));
             top: 0;
         }
         
         section > div::after {
-            background: linear-gradient(0deg, var(--gray), rgb(34 34 34 / 0%));
+            background: linear-gradient(0deg, var(--gray), var(--transparent));
             bottom: 0;
         }
 
