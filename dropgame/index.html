@@ -13,6 +13,14 @@
     <meta property="og:description" content="" />
 
     <style>
+        :root {
+            --lightblue: cyan;
+            --blue: dodgerblue;
+            --mediumblue: #42d2ff;
+            --darkblue: #1f74c8;
+            --gray: #666;
+        }
+        
         @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
         *{font-size:1em;line-height:1;text-decoration:none;margin:0;padding:0;box-sizing:border-box;scrollbar-width:thin;touch-action:manipulation;}*::before,*::after{line-height:inherit;box-sizing:inherit}h1,h2,h3,h4,h5,h6{font-weight:normal}ol,ul,li{list-style-type:none}table{border-collapse:collapse}
@@ -32,8 +40,8 @@
         
         h1 {
             font-size: 1em;
-            background: #222;
-            color: cyan;
+            background: var(--gray);
+            color: var(--lightblue);
             padding: 1.25rem 1.5rem 0;
             display: flex;
             justify-content: space-between;
@@ -60,24 +68,24 @@
         }
         
         main::before {
-            border-color: dodgerblue;
+            border-color: var(--blue);
             inset: -0.6em;
-            filter: drop-shadow(0 0 0.1rem dodgerblue);
+            filter: drop-shadow(0 0 0.1rem var(--blue));
         }
         
         main::after {
-            border-color: cyan;
+            border-color: var(--lightblue);
             inset: -1.2em;
-            filter: drop-shadow(0 0 0.1rem cyan);
+            filter: drop-shadow(0 0 0.1rem var(--lightblue));
         }
         
         section {
-            border: 0.35em dashed #222;
-            filter: drop-shadow(0 0 0.1rem #222);
+            border: 0.35em dashed var(--gray);
+            filter: drop-shadow(0 0 0.1rem var(--gray));
         }
         
         section > div {
-            background: #222;
+            background: var(--gray);
             color: #fff;
             max-height: 9.33rem;
             padding: 1rem 0;
@@ -97,12 +105,12 @@
         }
 
         section > div::before {
-            background: linear-gradient(0deg, rgb(34 34 34 / 0%), rgb(34 34 34));
+            background: linear-gradient(0deg, rgb(34 34 34 / 0%), var(--gray));
             top: 0;
         }
         
         section > div::after {
-            background: linear-gradient(0deg, rgb(34 34 34), rgb(34 34 34 / 0%));
+            background: linear-gradient(0deg, var(--gray), rgb(34 34 34 / 0%));
             bottom: 0;
         }
 
@@ -124,11 +132,11 @@
 
         section em:first-child {margin-top: 0}
         section em:last-child {margin-bottom: 0}
-        section em span ~ span {color: #1f74c8}
+        section em span ~ span {color: var(--darkblue)}
 
-        section em:nth-child(1) span ~ span {color: cyan}
-        section em:nth-child(2) span ~ span {color: #42d2ff}
-        section em:nth-child(3) span ~ span {color: dodgerblue}
+        section em:nth-child(1) span ~ span {color: var(--lightblue)}
+        section em:nth-child(2) span ~ span {color: var(--mediumblue)}
+        section em:nth-child(3) span ~ span {color: var(--blue)}
         
     </style>
 </head>
