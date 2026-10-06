@@ -139,6 +139,14 @@
         section em:nth-child(1) span ~ span {color: var(--lightblue)}
         section em:nth-child(2) span ~ span {color: var(--mediumblue)}
         section em:nth-child(3) span ~ span {color: var(--blue)}
+
+        .debug::after {
+            content: 'data should be appended to the URL in this format: ?{"user1":00.00,"user2":00.00,"user3":00.00}';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
         
     </style>
 </head>
