@@ -36,6 +36,7 @@
         
         body {
             font: 1rem/1 'Silkscreen', arial;
+            transition: opacity 1s ease-in-out;
             display: flex;
             user-select: none;
         }
@@ -56,11 +57,8 @@
             text-shadow: 0 0 0.25rem;
             max-width: calc(50vw - 3rem);
             margin: auto;
-            transition: opacity 1s ease-in-out;
             position: relative;
         }
-
-        main:has(em) {transition-duration: 2s}
         
         main::before,
         main::after {
@@ -117,7 +115,7 @@
         }
 
         section div div {
-            transition: transform 2s ease-in-out;
+            transition: transform 1s ease-in-out;
             transform: translateY(calc(-100% + 7rem));
         }
 
@@ -155,8 +153,8 @@
     </style>
 </head>
 
-<body>
-    <main style="opacity: 0;">
+<body style="opacity: 0;">
+    <main>
         <section>
             <h1>Drop Game Leaderboard <span></span></h1>
             <div>
@@ -187,9 +185,9 @@
         }
 
         setTimeout(() => {
-            main.removeAttribute('style');
+            document.body.style = '';
             if (debug) document.body.classList.add('debug');
-            else setTimeout(() => main.style.opacity = 0, ((div.children.length / 2) + 4) * 1e3);
+            else setTimeout(() => document.body.style.opacity = 0, ((div.children.length / 2) + 4) * 1e3);
         }, 1e3);
 
         main.querySelector('h1 span').innerText = new Date().getFullYear();
