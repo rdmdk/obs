@@ -116,12 +116,12 @@
             bottom: 0;
         }
 
-        section div div {
+        section div div:has(em:nth-of-type(4)) {
             transition: transform 1s ease-in-out;
             transform: translateY(calc(-100% + 7rem));
         }
 
-        section div div[style] {transform: none}
+        section div div[style]:has(em:nth-of-type(4)) {transform: none}
         
         section em {
             font-size: 1.75em;
