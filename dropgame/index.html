@@ -57,7 +57,7 @@
         
         main {
             text-shadow: 0 0 0.25rem;
-            max-width: calc(50vw - 3rem);
+            max-width: calc(66% - 5.5rem);
             margin: auto;
             position: relative;
         }
@@ -134,11 +134,16 @@
 
         section em:first-child {margin-top: 0}
         section em:last-child {margin-bottom: 0}
-        section em span ~ span {color: var(--darkblue)}
 
-        section em:nth-child(1) span ~ span {color: var(--lightblue)}
-        section em:nth-child(2) span ~ span {color: var(--mediumblue)}
-        section em:nth-child(3) span ~ span {color: var(--blue)}
+        section em span:first-of-type {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        section em span:last-of-type {color: var(--darkblue)}
+
+        section em:nth-child(1) span:last-of-type {color: var(--lightblue)}
+        section em:nth-child(2) span:last-of-type {color: var(--mediumblue)}
+        section em:nth-child(3) span:last-of-type {color: var(--blue)}
 
         .e::after {
             content: 'data should be appended to the URL in this format: ?{"user1":00.00,"user2":00.00}';
