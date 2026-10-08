@@ -170,7 +170,7 @@
         const get_data = (data) => {
             if (typeof data !== 'object') data = JSON.parse(decodeURIComponent(data));
             const filtered_data = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB));
-            div.innerHTML = filter_data.map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
+            div.innerHTML = filtered_data.map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
             setTimeout(() => div.style.transitionDuration = `${Object.entries(data).length / 2}s`, 2e3);
             document.addEventListener('keypress', e => {
                 if (e.code === 'Space') export_file(JSON.stringify(filtered_data));
