@@ -169,11 +169,28 @@
         const div = main.querySelector('div div');
         const get_data = (data) => {
             if (typeof data !== 'object') data = JSON.parse(decodeURIComponent(data));
-            div.innerHTML = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB)).map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
+            const filtered_data = Object.entries(data).sort(([kA, vA], [kB, vB]) => (vB - vA) || kA.localeCompare(kB));
+            div.innerHTML = filter_data.map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
             setTimeout(() => div.style.transitionDuration = `${Object.entries(data).length / 2}s`, 2e3);
+            document.addEventListener('keypress', e => {
+                if (e.code === 'Space') export_file(JSON.stringify(filtered_data));
+            });
         };
         const wls = window.location.search;
         const debug = window.location.href.includes('#');
+
+        const export_file(data) {
+            if (!data) return;
+            const blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'leaderboard_data';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
 
         if (wls) get_data(wls.substring(1));
         else {
