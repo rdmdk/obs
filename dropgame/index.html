@@ -118,7 +118,7 @@
 
         section div div:has(em:nth-of-type(4)) {
             transition: transform 1s ease-in-out;
-            transform: translateY(calc(-100% + 7rem));
+            transform: translateY(calc(-100% + 7.25rem));
         }
 
         section div div[style]:has(em:nth-of-type(4)) {transform: none}
@@ -173,7 +173,10 @@
             div.innerHTML = filtered_data.map(([k, v]) => `<em><span>${k}</span><span>${v}</span></em>`).join('');
             setTimeout(() => div.style.transitionDuration = `${Object.entries(data).length / 2}s`, 2e3);
             document.addEventListener('keypress', e => {
-                if (e.code === 'Space') export_file(JSON.stringify(filtered_data));
+                if (e.code === 'Space') {
+                    console.log(filtered_data);
+                    //export_file(JSON.stringify(filtered_data));
+                }
             });
         };
         const wls = window.location.search;
