@@ -179,7 +179,7 @@
         const wls = window.location.search;
         const debug = window.location.href.includes('#');
 
-        const export_file(data) {
+        const export_file = (data) => {
             if (!data) return;
             const blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
             const url = URL.createObjectURL(blob);
